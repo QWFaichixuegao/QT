@@ -3,3 +3,7 @@
 下载地址 ：https://download.qt.io/official_releases/qtcreator/ 建议先下QT再下VS，方便扫描到VS编译器，否则可重启电脑来扫描(vs下的是2019，编译器记得选上MSVC2017)
 Kit c and c++选择x86_amd64
 path环境变量加上QT msvc2017的bin
+
+
+Qt一些源文件可在安装时勾选Sources下载
+
