@@ -1,4 +1,4 @@
-Qt编译Mysql连接到数据库注意事项，这TM是个大坑  环境window 10 + Qt 5.13.1 +Qt Creator 4.10.0 +MSVC2017 64位
+Qt编译Mysql连接到数据库注意事项，  环境window 10 + Qt 5.13.1 +Qt Creator 4.10.0 +MSVC2017 64位
 QT5.10以上没有那该死的qsqlmysql  Mysql驱动
 唯一方法：
 一、、编译5.13.1\Src\qtbase\src\plugins\sqldrivers\mysql目录下的mysql.pro生成驱动
@@ -11,7 +11,8 @@ LIBS+="C:\mysql\lib\libmysql.lib"
 这两句话你mysql安装目录来改                    
 DESTDIR  = ../mysql/lib/
 这句话直接在你qt mysql源码的编译目录下建个lib文件夹生成MySQL驱动
+闭掉 /*-------------------------------------QMAKE_USE += mysql-----------------------------------*/网上很多教程就是没有这一步！！！！！
 然后编译
-四、编译成功后，将第三步lib文件夹下的拿所有东西（该死的垃圾玩意MySQL驱动）复制到5.13.1\msvc2017_64\plugins\sqldrivers（根据你的qt目录来）下面来
+四、编译成功后，将第三步lib文件夹下的拿所有东西（该死的MySQL驱动）复制到5.13.1\msvc2017_64\plugins\sqldrivers（根据你的qt目录来）下面来
 五、将你mysql安装目录里的C:\mysql\lib下的libmysql.lib与libmysql.dll复制到5.13.1\msvc2017_64\bin下（根据你的qt目录来）
                                    之后你其他的程序连接到mysql数据库时就有mysql库与驱动了好吧
